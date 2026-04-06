@@ -1,0 +1,7 @@
+services:
+  database:
+    image: "postgres:16.13-alpine3.23"
+    environment:
+      POSTGRES_PASSWORD: "local_password" #pode ser qualquer password
+    ports:
+      - "5432:5432" #porta pode ser descoberta nos logs
