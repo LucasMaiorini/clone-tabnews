@@ -4,8 +4,11 @@
   "description": "A project copied to simulate a real project used in a programming course. Just for educational purposes :)",
   "main": "index.js",
   "scripts": {
+    "services:up": "docker compose -f infra/compose.yaml up -d",
+    "services:stop": "docker compose -f infra/compose.yaml stop",
+    "services:down": "docker compose -f infra/compose.yaml down",
     "test": "jest",
-    "dev": "next dev",
+    "dev": "npm run services:up && next dev",
     "lint:check": "prettier --check .",
     "lint:fix": "prettier --write .",
     "test:watch": "jest --watchAll"
